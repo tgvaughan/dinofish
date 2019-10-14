@@ -4,7 +4,7 @@
 [ext_resource path="res://Fish.gd" type="Script" id=2]
 [ext_resource path="res://fish.svg" type="Texture" id=3]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 397.174, 2.8363, -12.8641, -69.0599, 12.8641, 69.0599, 351.811, 113.874, -2.70823, -67.7058, 2.70823, 67.7058, 454.047, 277.722, -8.80175, -53.4876, 8.80175, 53.4876, 389.049, 405.686, 29.7905, -39.9464, -29.7905, 39.9464, 456.755, 543.806, 0, 0, 0, 0, 441.182, 599.324 )
 }
@@ -13,7 +13,7 @@ _data = {
 radius = 163.198
 height = 111.775
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
@@ -30,11 +30,11 @@ centered = false
 [node name="Paths" type="Node" parent="."]
 
 [node name="SwimPath" type="Path2D" parent="Paths"]
-curve = SubResource( 3 )
+curve = SubResource( 1 )
 
 [node name="PathFollower" type="PathFollow2D" parent="Paths/SwimPath"]
 position = Vector2( 397.174, 2.8363 )
-rotation = 2.46995
+rotation = 2.46996
 
 [node name="Fish" type="Area2D" parent="Paths/SwimPath/PathFollower"]
 script = ExtResource( 2 )
@@ -47,5 +47,5 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Paths/SwimPath/PathFollower/Fish"]
 scale = Vector2( 0.2, 0.2 )
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 animation = "swim"
