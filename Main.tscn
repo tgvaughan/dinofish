@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://mud.png" type="Texture" id=2]
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Steggy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -19,10 +20,11 @@ centered = false
 [node name="SwimPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
-[node name="FishTimer" type="Timer" parent="."]
+[node name="FishSpawnTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Trees" type="Node2D" parent="."]
+[node name="Trees" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Tree" parent="Trees" instance=ExtResource( 3 )]
 position = Vector2( 173.097, 76.1625 )
@@ -42,9 +44,15 @@ position = Vector2( 93.8568, 483.132 )
 [node name="Tree6" parent="Trees" instance=ExtResource( 3 )]
 position = Vector2( 712.388, 501.595 )
 
+[node name="Tree8" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 723.159, 278.493 )
+z_index = 1
+
 [node name="Tree7" parent="Trees" instance=ExtResource( 3 )]
 position = Vector2( 78.4705, 253.875 )
 
-[node name="Tree8" parent="Trees" instance=ExtResource( 3 )]
-position = Vector2( 723.159, 278.493 )
-[connection signal="timeout" from="FishTimer" to="." method="_on_FishTimer_timeout"]
+[node name="Dinos" type="Node" parent="."]
+
+[node name="Steggy" parent="Dinos" instance=ExtResource( 4 )]
+position = Vector2( 239.376, 320.838 )
+[connection signal="timeout" from="FishSpawnTimer" to="." method="_on_FishSpawnTimer_timeout"]

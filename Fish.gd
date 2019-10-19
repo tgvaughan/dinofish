@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-var speed = 0.05
+var speed = 0.1
 var dir = 1
 
 func _ready():
