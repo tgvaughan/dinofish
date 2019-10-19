@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://mud.png" type="Texture" id=2]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 417.9, -14.318, -12.8641, -69.0599, 12.8641, 69.0599, 351.811, 113.874, -2.70823, -67.7058, 2.70823, 67.7058, 454.047, 277.722, -8.80175, -53.4876, 8.80175, 53.4876, 389.049, 405.686, -2.61414, -42.0597, 2.61414, 42.0597, 463.14, 526.666, 0, 0, 0, 0, 431.695, 628.87 )
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="SwimPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="FishTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 173.097, 76.1625 )
+
+[node name="Tree2" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 297.726, 220.025 )
+
+[node name="Tree3" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 670.845, 99.242 )
+
+[node name="Tree4" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 536.984, 339.269 )
+
+[node name="Tree5" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 93.8568, 483.132 )
+
+[node name="Tree6" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 712.388, 501.595 )
+
+[node name="Tree7" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 78.4705, 253.875 )
+
+[node name="Tree8" parent="Trees" instance=ExtResource( 3 )]
+position = Vector2( 723.159, 278.493 )
+[connection signal="timeout" from="FishTimer" to="." method="_on_FishTimer_timeout"]
