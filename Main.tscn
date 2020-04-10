@@ -23,6 +23,9 @@ curve = SubResource( 1 )
 [node name="FishSpawnTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="SharkSpawnTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="Trees" type="Node" parent="."]
 editor/display_folded = true
 
@@ -56,3 +59,4 @@ position = Vector2( 78.4705, 253.875 )
 [node name="Steggy" parent="Dinos" instance=ExtResource( 4 )]
 position = Vector2( 239.376, 320.838 )
 [connection signal="timeout" from="FishSpawnTimer" to="." method="_on_FishSpawnTimer_timeout"]
+[connection signal="timeout" from="SharkSpawnTimer" to="." method="_on_SharkSpawnTimer_timeout"]

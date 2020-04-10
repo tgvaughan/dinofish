@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Shark.gd" type="Script" id=1]
+[ext_resource path="res://shark1.svg" type="Texture" id=2]
+[ext_resource path="res://shark2.svg" type="Texture" id=3]
+[ext_resource path="res://shark3.svg" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 13.4554
+height = 55.8093
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "swim",
+"speed": 3.0
+} ]
+
+[node name="PathFollower" type="PathFollow2D"]
+script = ExtResource( 1 )
+
+[node name="SharkArea" type="Area2D" parent="."]
+rotation = -1.5708
+
+[node name="SharkShape" type="CollisionShape2D" parent="SharkArea"]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="SharkArea"]
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 2 )
+animation = "swim"
