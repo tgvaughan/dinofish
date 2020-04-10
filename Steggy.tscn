@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Steggy.gd" type="Script" id=1]
 [ext_resource path="res://steggy1.svg" type="Texture" id=2]
@@ -21,11 +21,30 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( -2.00772, 19.0733, 2.00772, -19.0733, 219.081, 39.2276, 26.1004, 2.50965, -26.1004, -2.50965, 201.011, 14.633, 15.0579, -5.52123, -15.0579, 5.52123, 124.216, 20.1543, 7.52895, 3.51351, -7.52895, -3.51351, 84.0616, 24.6716 )
+}
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 18.5096
+height = 97.1432
+
 [node name="Steggy" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-animation = "eat"
+
+[node name="EatPath" type="Path2D" parent="."]
+position = Vector2( 3.51352, -2.50965 )
+curve = SubResource( 2 )
+
+[node name="EatArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EatArea"]
+position = Vector2( 176.679, 25.5984 )
+rotation = 1.5708
+shape = SubResource( 3 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

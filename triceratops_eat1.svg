@@ -7,7 +7,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="triceratops.svg"
+   sodipodi:docname="triceratops_eat1.svg"
    inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
    id="svg8"
    version="1.1"
@@ -344,7 +344,7 @@
   </g>
   <g
      transform="translate(-29.023859,-27.552269)"
-     style="display:none"
+     style="display:inline"
      inkscape:label="Eat 1"
      id="g392"
      inkscape:groupmode="layer">
@@ -501,7 +501,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Position 1"
-     style="display:inline"
+     style="display:none"
      transform="translate(-29.023859,-27.552269)">
     <path
        sodipodi:nodetypes="csscsscc"

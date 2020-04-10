@@ -7,22 +7,15 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite.play("default")
-	var nframes = $AnimatedSprite.frames.get_frame_count("default")
+	var nframes = $AnimatedSprite.frames.get_frame_count("default");
 	$AnimatedSprite.frame = randi() % nframes
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("Player1_Eat"):
-		eat_fish()
+	if Input.is_action_just_pressed("Player2_Eat"):
+		$AnimatedSprite.play("eat")
 	pass
 
-func eat_fish():
-	$AnimatedSprite.play("eat")
-	var fish = $EatArea.get_overlapping_areas()
-	if !fish.empty():
-		var pathfollower = fish[0].owner
-		$EatPath.add_child(pathfollower)
-	
 
 func _on_AnimatedSprite_animation_finished():
 	$AnimatedSprite.play("default")
