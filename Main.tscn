@@ -28,7 +28,6 @@ one_shot = true
 one_shot = true
 
 [node name="Trees" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Tree" parent="Trees" instance=ExtResource( 3 )]
 position = Vector2( 173.097, 76.1625 )
@@ -58,7 +57,7 @@ position = Vector2( 78.4705, 253.875 )
 [node name="Dinos" type="Node" parent="."]
 
 [node name="Steggy" parent="Dinos" instance=ExtResource( 4 )]
-position = Vector2( 239.376, 320.838 )
+position = Vector2( 238.871, 320.838 )
 
 [node name="Triceratops" parent="Dinos" instance=ExtResource( 5 )]
 position = Vector2( 572.526, 163.579 )

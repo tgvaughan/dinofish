@@ -11,17 +11,16 @@ func _ready():
 	$AnimatedSprite.frame = randi() % nframes
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Player1_Eat"):
 		eat_fish()
 	pass
 
 func eat_fish():
 	$AnimatedSprite.play("eat")
-	var fish = $EatArea.get_overlapping_areas()
-	if !fish.empty():
-		var pathfollower = fish[0].owner
-		$EatPath.add_child(pathfollower)
+	#var fish = $EatArea.get_overlapping_areas()
+	#if !fish.empty():
+	#	$EatPath.add_child(fish)
 	
 
 func _on_AnimatedSprite_animation_finished():
