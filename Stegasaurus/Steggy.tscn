@@ -8,13 +8,6 @@
 [ext_resource path="res://Stegasaurus/assets/steggy_eat3.svg" type="Texture" id=6]
 [ext_resource path="res://Stegasaurus/assets/steggy_eat4.svg" type="Texture" id=7]
 
-
-
-
-
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ) ],
@@ -35,7 +28,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 18.5096
-height = 97.1432
+height = 79.6287
 
 [node name="Steggy" type="Node2D"]
 script = ExtResource( 1 )
@@ -45,13 +38,16 @@ scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
 
 [node name="EatPath" type="Path2D" parent="."]
-position = Vector2( 3.51352, -2.50965 )
+position = Vector2( 12.3293, -2.50965 )
+scale = Vector2( 0.895128, 1 )
+z_index = -1
 curve = SubResource( 2 )
 
 [node name="EatArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EatArea"]
-position = Vector2( 176.679, 25.5984 )
+position = Vector2( 159.826, 25.1027 )
 rotation = 1.5708
+z_index = -1
 shape = SubResource( 3 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

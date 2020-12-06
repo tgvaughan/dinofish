@@ -19,8 +19,10 @@ func _ready():
 
 func _on_FishSpawnTimer_timeout():
 	var fish = Fish.instance()
-	fish.v_offset = 100*randf() - 50
-	$SwimPath.add_child(fish)
+	var fishPath = PathFollow2D.new()
+	fishPath.add_child(fish)
+	fishPath.v_offset = 100*randf() - 50
+	$SwimPath.add_child(fishPath)
 	
 	$FishSpawnTimer.start(
 			randf() * (maxFishSpawnDelay-minFishSpawnDelay)
@@ -28,8 +30,10 @@ func _on_FishSpawnTimer_timeout():
 
 func _on_SharkSpawnTimer_timeout():
 	var shark = Shark.instance()
-	shark.v_offset = 100*randf() - 50
-	$SwimPath.add_child(shark)
+	var sharkPath = PathFollow2D.new()
+	sharkPath.add_child(shark)
+	sharkPath.v_offset = 100*randf() - 50
+	$SwimPath.add_child(sharkPath)
 	
 	$SharkSpawnTimer.start(
 			randf() * (maxSharkSpawnDelay-minSharkSpawnDelay)
