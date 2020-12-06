@@ -1,6 +1,6 @@
 extends Node2D
-const Fish = preload("res://Fish.tscn")
-const Shark = preload("res://Shark.tscn")
+const Fish = preload("res://Fish/Fish.tscn")
+const Shark = preload("res://Shark/Shark.tscn")
 
 var maxFishSpawnDelay = 2
 var minFishSpawnDelay = 1
