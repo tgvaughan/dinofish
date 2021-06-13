@@ -3,6 +3,7 @@ extends Area2D
 var speed = 0.1
 var dir = 1
 var eaten = false
+var points = 1
 
 onready var parent = get_parent()
 

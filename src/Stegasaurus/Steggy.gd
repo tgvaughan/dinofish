@@ -26,7 +26,11 @@ func eat_fish():
 			return
 		else:
 			fish.eaten = true
-			
+		
+		$EatingAudio.play()
+		if fish.points < 0:
+			$SharkEatingAudio.play()
+		
 		var pathFollower = fish.get_parent()
 		pathFollower.get_parent().remove_child(pathFollower)
 		pathFollower.v_offset = 0
@@ -37,7 +41,7 @@ func eat_fish():
 		$EatPath.add_child(pathFollower)
 		pathFollower.set_unit_offset(0.0)
 		
-		score += 1
+		score = max(0, score + fish.points)
 		emit_signal("update_player1_score", score)
 		
 		

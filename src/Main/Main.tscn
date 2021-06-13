@@ -121,6 +121,7 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="timeout" from="FishSpawnTimer" to="." method="_on_FishSpawnTimer_timeout"]
 [connection signal="timeout" from="SharkSpawnTimer" to="." method="_on_SharkSpawnTimer_timeout"]
 [connection signal="update_player1_score" from="Dinos/Steggy" to="HUD" method="_on_Steggy_update_player1_score"]
